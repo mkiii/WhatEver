@@ -1,4 +1,4 @@
-﻿namespace WhatEver
+namespace WhatEver
 {
     partial class WhatEver
     {
@@ -443,10 +443,12 @@
             // HostContent
             // 
             this.HostContent.Location = new System.Drawing.Point(6, 6);
+            this.HostContent.MaxLength = 999999999;
             this.HostContent.Multiline = true;
             this.HostContent.Name = "HostContent";
             this.HostContent.Size = new System.Drawing.Size(445, 544);
             this.HostContent.TabIndex = 0;
+            this.HostContent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HostContent_KeyDown);
             // 
             // ShareConfig
             // 
@@ -471,7 +473,6 @@
             // IT
             // 
             this.IT.ContextMenuStrip = this.IMemu;
-            //this.IT.Icon = ((System.Drawing.Icon)(resources.GetObject("IT.Icon")));
             this.IT.Visible = true;
             this.IT.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.IT_MouseDoubleClick);
             // 
@@ -482,25 +483,25 @@
             this.关闭代理CToolStripMenuItem,
             this.退出EToolStripMenuItem});
             this.IMemu.Name = "IMemu";
-            this.IMemu.Size = new System.Drawing.Size(139, 70);
+            this.IMemu.Size = new System.Drawing.Size(153, 92);
             // 
             // ProxyList
             // 
             this.ProxyList.Name = "ProxyList";
-            this.ProxyList.Size = new System.Drawing.Size(138, 22);
+            this.ProxyList.Size = new System.Drawing.Size(152, 22);
             this.ProxyList.Text = "配置列表(&L)";
             // 
             // 关闭代理CToolStripMenuItem
             // 
             this.关闭代理CToolStripMenuItem.Name = "关闭代理CToolStripMenuItem";
-            this.关闭代理CToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.关闭代理CToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.关闭代理CToolStripMenuItem.Text = "关闭代理(&C)";
             this.关闭代理CToolStripMenuItem.Click += new System.EventHandler(this.关闭代理CToolStripMenuItem_Click);
             // 
             // 退出EToolStripMenuItem
             // 
             this.退出EToolStripMenuItem.Name = "退出EToolStripMenuItem";
-            this.退出EToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.退出EToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.退出EToolStripMenuItem.Text = "退出(&E)";
             this.退出EToolStripMenuItem.Click += new System.EventHandler(this.退出EToolStripMenuItem_Click);
             // 
@@ -508,7 +509,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 644);
+            this.ClientSize = new System.Drawing.Size(485, 640);
             this.Controls.Add(this.getShareConfig);
             this.Controls.Add(this.ShareConfig);
             this.Controls.Add(this.Settings);
@@ -517,12 +518,11 @@
             this.Controls.Add(this.ApplySetting);
             this.Controls.Add(this.ConfigList);
             this.Controls.Add(this.label1);
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(501, 678);
             this.MinimumSize = new System.Drawing.Size(501, 678);
             this.Name = "WhatEver";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IE代理及Hosts配置自动化工具";
             this.TopMost = true;
