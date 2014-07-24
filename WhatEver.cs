@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -257,6 +257,12 @@ namespace WhatEver{
 
         private void 关闭代理CToolStripMenuItem_Click(object sender, EventArgs e){
             Proxies.UnsetProxy();
+
+            foreach (ToolStripMenuItem item in this.ProxyList.DropDownItems)
+            {
+                item.Checked = false;
+            }
+
             ShowTips("代理关闭成功!");
         }
 
@@ -319,6 +325,19 @@ namespace WhatEver{
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new WhatEver());
+        }
+
+        /// <summary>
+        /// 文本框全选事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HostContent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.A)
+            {
+                ((TextBox)sender).SelectAll();
+            }
         }
 
     }
